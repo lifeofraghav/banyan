@@ -304,9 +304,9 @@ em{font-style:italic}
 
 /* ---- Review round 2 ---- */
 /* Brand texture: a quiet tonal grid (after the app's green checks) that fades out at the edges */
-.pat{position:absolute;inset:0;pointer-events:none;background-size:64px 64px;-webkit-mask-image:radial-gradient(70% 70% at 50% 50%,#000 0%,transparent 100%);mask-image:radial-gradient(70% 70% at 50% 50%,#000 0%,transparent 100%)}
-.pat-ink{background-image:conic-gradient(rgba(11,90,73,.07) 25%,transparent 0 50%,rgba(11,90,73,.07) 0 75%,transparent 0)}
-.pat-light{background-image:conic-gradient(rgba(243,238,225,.045) 25%,transparent 0 50%,rgba(243,238,225,.045) 0 75%,transparent 0)}
+.pat{position:absolute;inset:0;pointer-events:none;background-size:72px 72px;background-position:center;-webkit-mask-image:radial-gradient(70% 70% at 50% 50%,#000 0%,transparent 100%);mask-image:radial-gradient(70% 70% at 50% 50%,#000 0%,transparent 100%)}
+.pat-ink{background-image:linear-gradient(rgba(11,90,73,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(11,90,73,.07) 1px,transparent 1px)}
+.pat-light{background-image:linear-gradient(rgba(243,238,225,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(243,238,225,.05) 1px,transparent 1px)}
 
 /* 1 · Hero */
 .hero-copy{max-width:none;padding:0 24px}
@@ -343,8 +343,7 @@ em{font-style:italic}
 .stack{position:relative}
 .card{overflow:hidden;isolation:isolate}
 .card:nth-child(5){top:176px;z-index:5}
-.card-deco{position:absolute;z-index:-1;inset:0 50% 0 0;pointer-events:none;background:conic-gradient(rgba(255,255,255,.09) 25%,transparent 0 50%,rgba(255,255,255,.09) 0 75%,transparent 0) 0 0/56px 56px;-webkit-mask-image:radial-gradient(90% 80% at 10% 10%,#000 0%,transparent 75%);mask-image:radial-gradient(90% 80% at 10% 10%,#000 0%,transparent 75%)}
-.c-cream .card-deco,.c-sand .card-deco,.c-teal .card-deco{background-image:conic-gradient(rgba(27,38,33,.06) 25%,transparent 0 50%,rgba(27,38,33,.06) 0 75%,transparent 0)}
+.card-deco{position:absolute;z-index:-1;inset:0 50% 0 0;pointer-events:none}
 .card-deco svg{position:absolute;right:32px;top:32px;width:120px;height:120px;color:currentColor;opacity:.16}
 .card-deco::after{content:"";position:absolute;left:24px;right:24px;bottom:0;height:90px;background:url(bars-ink.svg) bottom/100% 100% no-repeat;opacity:.07}
 .c-green .card-deco::after,.c-terra .card-deco::after{background-image:url(bars-gold.svg);opacity:.22}
