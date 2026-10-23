@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banyan · Warmth</title>
+<meta name="description" content="Banyan homepage, Direction C: the Framer homepage's sections and copy, told warmth-first with human imagery. Structure after the Pripyat template.">
+<meta name="theme-color" content="#F1EDE2">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/warmth.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="assets/warmth.js" defer></script>
+</head>
+<body class="wt">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 32 32"><path d="M16 5l-2 2 2 2 2-2zM8 14l5-5 3 3m0 0l3-3 5 5v10M8 14v10m0 0h16M8 26h16M16 26v-3m-5-5c3 0 5 2 5 5m5-5c-3 0-5 2-5 5" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol></svg>
+
+<!-- Floating pill nav -->
+<header class="pill" data-pill>
+  <a href="./" aria-current="page" class="pill-logo" aria-label="Banyan home"><img src="assets/logo-lockup.png" alt="Banyan" width="104" height="25"></a>
+  <nav class="pill-links" aria-label="Main">
+    <a href="#what-banyan-does">What Banyan does</a>
+    <a href="#life-in-india">Cards</a>
+    <a href="#personal-banker">How it works</a>
+    <a href="#family">Family</a>
+  </nav>
+  <a href="#" class="pill-sign">Sign in</a>
+  <a href="#" class="pill-cta">Request access</a>
+</header>
+
+<main>
+
+<!-- 1 · Hero -->
+<section class="hero" aria-labelledby="hero-t">
+  <div class="hero-media" data-hero-media><img src="assets/warmth/garden-phone.jpg" alt="A man in a city garden, looking at the Banyan app" fetchpriority="high"></div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <p class="hero-eb" data-rise>US banking, built for life between two countries</p>
+    <h1 id="hero-t" class="hero-h" data-rise>Your personal banker<br>for life between<br><em>the US and India</em></h1>
+    <p class="hero-sub" data-rise>Send money, use UPI, spend in India and support family, from one place built for an NRI financial life.</p>
+    <a class="hero-link" href="#personal-banker" data-rise>See how Banyan works <span aria-hidden="true">→</span></a>
+  </div>
+  <a class="hero-scroll" href="#proofs" aria-label="Scroll down" data-rise><i></i></a>
+</section>
+
+<!-- 2 · The three proofs, under the billboard -->
+<section class="state" aria-label="What Banyan does in one line each">
+  <figure class="state-card" data-grow>
+    <img src="assets/warmth/billboard.jpg" alt="A billboard at dusk: Two homes. One place to manage them. Kolkata and San Francisco drawn as one city">
+  </figure>
+  <div class="proofs-band" id="proofs">
+    <div class="pat pat-ink" aria-hidden="true"></div>
+    <ul class="proofs wrap">
+      <li data-rise-in>
+        <span class="pf-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></span>
+        <b>Send money to India</b><em>Instantly</em><small>Live Google rates. No transaction fee.</small>
+        <div class="pf-ui"><span class="live"></span>$1 = <b data-rate>₹88.42</b><s>live rate</s></div>
+      </li>
+      <li data-rise-in>
+        <span class="pf-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>
+        <b>Your US account</b><em>UPI-ready</em><small>For everyday payments in India.</small>
+        <div class="pf-ui"><span class="ok">✓</span>Paid <b>₹340</b><s>Chai Point, Bandra</s></div>
+      </li>
+      <li data-rise-in>
+        <span class="pf-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></svg></span>
+        <b>Spend in India</b><em>No foreign transaction fee</em><small>On eligible Banyan card purchases.</small>
+        <div class="pf-ui"><span class="ok">✓</span>FX fee <b>$0.00</b><s>Taj Mahal Palace</s></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3 · Built for the financial life you still lead in India: stacked photo cards -->
+<section class="stack" id="life-in-india" aria-labelledby="stack-t">
+  <div class="wrap">
+    <h2 id="stack-t" class="stack-h">Built for the financial life<br>you still lead in India.</h2>
+  </div>
+  <div class="cards">
+    <article class="card c-sand"><div class="card-deco" aria-hidden="true"><svg><use href="#mark"/></svg></div>
+      <div class="card-tx">
+        <svg class="card-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
+        <h3>Pay for a loved one</h3><p>Even from a world away.</p>
+      </div>
+      <figure class="card-ph"><img src="assets/warmth/mother-son.jpg" alt="A son showing his mother something on his phone" loading="lazy"><div class="chip chip-tl" data-chip><small>Sent to Amma</small><b>₹25,000</b><span>Arrived in 4 seconds</span></div></figure>
+    </article>
+    <article class="card c-green"><div class="card-deco" aria-hidden="true"><svg><use href="#mark"/></svg></div>
+      <div class="card-tx">
+        <svg class="card-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></svg>
+        <h3>Pay while visiting India</h3><p>Feel right at home.</p>
+      </div>
+      <figure class="card-ph"><img src="assets/warmth/card-pocket.jpg" alt="The Banyan card tucked into a shirt pocket" loading="lazy"><div class="chip chip-br" data-chip><small>UPI · from your US balance</small><b>₹340 paid</b><span>Chai Point, Bandra</span></div></figure>
+    </article>
+    <article class="card c-terra"><div class="card-deco" aria-hidden="true"><svg><use href="#mark"/></svg></div>
+      <div class="card-tx">
+        <svg class="card-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.6c2.8-.3 5 1.3 5.5 4.4"/></svg>
+        <h3>Support visiting parents</h3><p>With boundaries you choose.</p>
+      </div>
+      <figure class="card-ph"><img src="assets/warmth/father-daughter.jpg" alt="A daughter and her father looking at a tablet together" loading="lazy"><div class="chip chip-tr" data-chip><small>Dad’s card</small><b>₹15,000 / month</b><i class="bar"><u style="width:38%"></u></i><span>₹5,700 used</span></div></figure>
+    </article>
+    <article class="card c-teal"><div class="card-deco" aria-hidden="true"><svg><use href="#mark"/></svg></div>
+      <div class="card-tx">
+        <svg class="card-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4"/></svg>
+        <h3>Plan together</h3><p>Approval stays a separate permission.</p>
+      </div>
+      <figure class="card-ph"><img src="assets/warmth/couple-crop.jpg" alt="A couple smiling at the Banyan app together" loading="lazy"><div class="chip chip-br" data-chip><small>Needs your approval</small><b>Pune flat rent · ₹32,000</b><span class="ask"><em>Decline</em><em>Approve</em></span></div></figure>
+    </article>
+    <article class="card c-cream"><div class="card-deco" aria-hidden="true"><svg><use href="#mark"/></svg></div>
+      <div class="card-tx">
+        <svg class="card-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8Z"/><path d="M14 2.5V8h5.5M8.5 13h7M8.5 17h7"/></svg>
+        <h3>Stay ready with records</h3><p>For advisers in both countries.</p>
+      </div>
+      <figure class="card-ph"><img src="assets/warmth/phone-coffee.jpg" alt="A man with a tablet and a coffee, reviewing his records" loading="lazy"><div class="chip chip-tl" data-chip><small>Records ready</small><b>FY 2025–26 pack</b><span>Shared with your CA</span></div></figure>
+    </article>
+  </div>
+</section>
+
+<!-- 4 · Six places your India money lives today: they fold into one as you scroll -->
+<section class="month" id="what-banyan-does" data-month aria-labelledby="six-t">
+  <div class="month-stage">
+    <div class="pat pat-ink pat-month" aria-hidden="true"></div>
+    <div class="wrap month-in">
+      <div class="month-copy">
+        <h2 id="six-t" class="month-h">Six places your India money lives today. <em>One with Banyan.</em></h2>
+        <p class="month-p">One place, not another stack of apps</p>
+        <div class="apps" data-apps aria-hidden="true">
+          <span><svg viewBox="0 0 24 24"><path d="M3 10 12 4l9 6M5 10v8M19 10v8M9 10v8M15 10v8M3 20h18"/></svg>US bank</span>
+          <span><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Transfers</span>
+          <span><svg viewBox="0 0 24 24"><path d="M4 18.5c.5-3 2.6-4.5 5-4.5s4.5 1.5 5 4.5M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M15.5 11.5a2.5 2.5 0 1 0 0-5M17 14c2 .4 3.2 1.8 3.5 4.5"/></svg>Family chat</span>
+          <span><svg viewBox="0 0 24 24"><path d="M7 3h10v18H7zM11 18h2"/></svg>UPI app</span>
+          <span><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg>Forex card</span>
+          <span><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M4 14h16M10 4v16"/></svg>Spreadsheet</span>
+          <b><svg><use href="#mark"/></svg>Banyan</b>
+        </div>
+      </div>
+      <div class="list" aria-label="Six places, one Banyan">
+        <header><b>One with Banyan</b><span data-left>0 of 6</span></header>
+        <ul>
+          <li data-item><i></i><span>US banking</span><em>Your money home</em></li>
+          <li data-item><i></i><span>India transfers</span><em>Instant, live rate¹</em></li>
+          <li data-item><i></i><span>Family</span><em>Scoped access, real limits</em></li>
+          <li data-item><i></i><span>UPI</span><em>From your balance²</em></li>
+          <li data-item><i></i><span>Cards</span><em>No Indian transaction fees³</em></li>
+          <li data-item><i></i><span>Records</span><em>Kept as you go</em></li>
+        </ul>
+        <div class="list-done" data-done>
+          <div><img src="assets/warmth/phone-coffee-card.jpg" alt="The Banyan app and card over a morning coffee" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · How it works: your personal banker, in your pocket -->
+<section class="banker" id="personal-banker" aria-labelledby="bk-t">
+  <div class="pat pat-light" aria-hidden="true"></div>
+  <div class="banker-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="tag tag-dark">How it works</p>
+    <h2 id="bk-t" class="banker-h">Your personal banker, <em>in your pocket</em></h2>
+    <p class="banker-p">Banyan notices what needs attention, finds the right information, prepares the next step, and keeps your financial life organised across the US and India. You review and approve meaningful actions.</p>
+    <div class="banker-grid" data-steps>
+      <ol class="banker-points">
+        <li><button type="button"><em>01</em><b>Notices what’s due</b><p>Mum’s monthly support and a Pune electricity bill, both due this week.</p><i></i></button></li>
+        <li><button type="button"><em>02</em><b>Prepares the next step</b><p>Payee, amount and the live rate, ready before you open the app.</p><i></i></button></li>
+        <li><button type="button"><em>03</em><b>Asks for your approval</b><p>Nothing moves until you say so.</p><i></i></button></li>
+        <li><button type="button"><em>04</em><b>Completes the tasks</b><p>Mum’s support sent and the bill paid, in seconds.</p><i></i></button></li>
+        <li><button type="button"><em>05</em><b>Keeps the record</b><p>Receipts and statements filed for both countries.</p><i></i></button></li>
+      </ol>
+      <figure class="banker-ph">
+        <img src="assets/warmth/chef.jpg" alt="A man cooking at home, his evening his own" loading="lazy">
+        <div class="app" aria-live="polite">
+          <header><svg><use href="#mark"/></svg><span>Banyan</span><small>now</small></header>
+          <div class="app-s on">
+            <small>Due this week</small>
+            <ul><li><span>Mum’s monthly support</span><b>₹25,000</b></li><li><span>Pune electricity</span><b>₹2,140</b></li></ul>
+          </div>
+          <div class="app-s">
+            <small>Ready to send</small>
+            <ul><li><span>To Amma · HDFC ••4021</span><b>₹25,000</b></li><li><span>Live rate</span><b>$1 = ₹88.42</b></li><li><span>You pay</span><b>$282.73</b></li></ul>
+          </div>
+          <div class="app-s">
+            <small>Approve 2 payments?</small>
+            <p>₹27,140 to India. Nothing moves until you confirm.</p>
+            <span class="app-btn">Approve with Face ID</span>
+          </div>
+          <div class="app-s">
+            <small>Done</small>
+            <p class="app-done"><span>✓</span>Both paid in 3 seconds</p>
+          </div>
+          <div class="app-s">
+            <small>Filed</small>
+            <ul><li><span>Receipt · Amma support</span><b>US + IN</b></li><li><span>Receipt · Pune electricity</span><b>US + IN</b></li></ul>
+          </div>
+        </div>
+      </figure>
+    </div>
+    <a class="btn btn-light banker-cta" href="#">Request access</a>
+  </div>
+</section>
+
+<!-- 6 · Banyan works with the people in your financial life -->
+<section class="people" id="family" aria-labelledby="pe-t">
+  <div class="wrap people-in">
+    <div class="pat pat-ink" aria-hidden="true"></div>
+    <h2 id="pe-t" class="people-h">Banyan works with the people in your financial life.</h2>
+    <div class="people-grid">
+      <article data-rise-in><figure class="pp-couple"><img src="assets/warmth/couple-crop.jpg" alt="A couple looking at the Banyan app together" loading="lazy"><span class="pp-tag">Shared activity · No approval rights</span></figure><h3>Your spouse</h3><p>Share selected activity. Prepare plans together. Approval remains a separate permission.</p></article>
+      <article data-rise-in><figure class="pp-family"><img src="assets/warmth/family-sofa-kids.jpg" alt="A father on the sofa while his children play on the rug" loading="lazy"><span class="pp-tag">Card for Dad · ₹15,000 limit</span></figure><h3>Your adult family</h3><p>A card for a parent or an adult child, with limits you set.</p></article>
+      <article data-rise-in><figure class="pp-adviser"><img src="assets/warmth/suit-tablet.jpg" alt="A man reviewing statements on a tablet" loading="lazy"><span class="pp-tag">Read-only · Your CA</span></figure><h3>Your advisers</h3><p>Read-only access to the records your CA or US tax adviser needs.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- The big closing line, then the footer card over it -->
+<section class="closer" aria-hidden="true"><p>Roots in India.<br>Wings in the US.</p></section>
+</main>
+
+<footer class="foot">
+  <div class="foot-card">
+    <div class="foot-top">
+      <div class="foot-brand"><img src="assets/logo-lockup.png" alt="Banyan" width="132" height="31"><p>Your personal banker for life between two homes.</p></div>
+      <form class="foot-form" onsubmit="return false">
+        <b>Get early access</b>
+        <p>A short note when your invite is ready. Nothing else.</p>
+        <div><input type="email" placeholder="you@example.com" aria-label="Email address"><button type="submit">Join the list</button></div>
+      </form>
+    </div>
+    <div class="foot-cols">
+      <div><small>Banyan</small><a href="#">Home</a><a href="#personal-banker">Your banker</a><a href="#family">Family</a></div>
+      <div><small>Contact</small><a href="mailto:hello@banyan.com">hello@banyan.com</a></div>
+      <div><small>Social</small><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+      <div class="foot-sent"><small>Sent home this month · 5</small><s>Amma’s monthly support</s><s>Pune flat rent</s><s>Dad’s electricity bill</s><s>Sunita’s salary</s><s>Diwali sweets</s></div>
+    </div>
+    <div class="foot-legal">
+      <p>In the US, Banyan operates as a Money Services Business (MSB), Banyan Tech LLC (MSB Registration Number: 31000321440951), and offers money remittance services to U.S. customers in partnership with a regulated partner bank that is subject to oversight by applicable federal and state banking regulators, as well as Bank Secrecy Act and anti-money laundering requirements administered by the Financial Crimes Enforcement Network (FinCEN).</p>
+      <p>Our services are provided in partnership with regulated financial institutions and are designed to support compliance with applicable laws and regulations in the jurisdictions where we operate.</p>
+      <div class="foot-bottom"><span>© 2026 Banyan Tech LLC</span><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
