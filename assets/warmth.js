@@ -106,9 +106,6 @@
     const { gsap, ScrollTrigger } = window;
     if (!gsap || !ScrollTrigger || reduce) return;
     gsap.registerPlugin(ScrollTrigger);
-    // Hero: the photo drifts and settles as you leave it
-    gsap.fromTo("[data-hero-media]", { scale: 1.08 }, { scale: 1, duration: 1.8, ease: "power2.out" });
-    gsap.to("[data-hero-media]", { yPercent: 12, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
     // The billboard grows to fill the frame as it arrives
     gsap.fromTo("[data-grow]", { scale: 0.88, borderRadius: 40 }, { scale: 1, borderRadius: 28, ease: "none", scrollTrigger: { trigger: "[data-grow]", start: "top 95%", end: "top 25%", scrub: true } });
     // Each stacked card dims a touch as the next one slides over it

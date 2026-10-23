@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#F1EDE2">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/warmth.css">
+<link rel="stylesheet" href="assets/hero.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="assets/warmth.js" defer></script>
@@ -17,7 +18,7 @@
 
 <!-- Floating pill nav -->
 <header class="pill" data-pill>
-  <a href="./" aria-current="page" class="pill-logo" aria-label="Banyan home"><img src="assets/logo-lockup.png" alt="Banyan" width="104" height="25"></a>
+  <a href="./" aria-current="page" class="pill-logo" aria-label="Banyan home"><img src="assets/hero/banyan.png" alt="Banyan" width="155" height="36"></a>
   <nav class="pill-links" aria-label="Main">
     <a href="#what-banyan-does">What Banyan does</a>
     <a href="#life-in-india">Cards</a>
@@ -25,22 +26,25 @@
     <a href="#family">Family</a>
   </nav>
   <a href="#" class="pill-sign">Sign in</a>
-  <a href="#" class="pill-cta">Request access</a>
+  <a href="#access" class="pill-cta">Request access</a>
 </header>
 
 <main>
 
-<!-- 1 · Hero -->
-<section class="hero" aria-labelledby="hero-t">
-  <div class="hero-media" data-hero-media><img src="assets/warmth/garden-phone.jpg" alt="A man in a city garden, looking at the Banyan app" fetchpriority="high"></div>
-  <div class="hero-shade" aria-hidden="true"></div>
-  <div class="hero-copy">
-    <p class="hero-eb" data-rise>US banking, built for life between two countries</p>
-    <h1 id="hero-t" class="hero-h" data-rise>Your personal banker<br>for life between<br><em>the US and India</em></h1>
-    <p class="hero-sub" data-rise>Send money, use UPI, spend in India and support family, from one place built for an NRI financial life.</p>
-    <a class="hero-link" href="#personal-banker" data-rise>See how Banyan works <span aria-hidden="true">→</span></a>
+<!-- Hero matched to Banyan Website, Figma 334:6443 -->
+<section class="figma-hero" aria-labelledby="hero-t">
+  <div class="figma-hero-media" aria-hidden="true">
+    <img class="figma-hero-base" src="assets/hero/family-base.png" alt="">
+    <img class="figma-hero-photo" src="assets/hero/family.png" alt="" fetchpriority="high">
   </div>
-  <a class="hero-scroll" href="#proofs" aria-label="Scroll down" data-rise><i></i></a>
+  <div class="figma-hero-shade" aria-hidden="true"></div>
+  <div class="figma-hero-content">
+    <h1 id="hero-t">Your personal banker for <br>life between <span>the US and India</span></h1>
+    <div class="figma-hero-details">
+      <p>Send money to India, pay with UPI, manage expenses back home, and stay on top of your finances in both countries.</p>
+      <a class="figma-hero-button" href="#access">Request access</a>
+    </div>
+  </div>
 </section>
 
 <!-- 2 · The three proofs, under the billboard -->
@@ -219,7 +223,7 @@
   <div class="foot-card">
     <div class="foot-top">
       <div class="foot-brand"><img src="assets/logo-lockup.png" alt="Banyan" width="132" height="31"><p>Your personal banker for life between two homes.</p></div>
-      <form class="foot-form" onsubmit="return false">
+      <form id="access" class="foot-form" onsubmit="return false">
         <b>Get early access</b>
         <p>A short note when your invite is ready. Nothing else.</p>
         <div><input type="email" placeholder="you@example.com" aria-label="Email address"><button type="submit">Join the list</button></div>

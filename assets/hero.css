@@ -1,0 +1,32 @@
+/* Figma 334:6443 — 1440 × 745 reference. Kept separate from the live-site CSS. */
+.pill{top:24px;padding-right:8px;background:rgba(251,248,240,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(19,34,29,.35)}
+.pill-logo img{width:155px;height:auto;filter:none}
+.pill-links a,.pill-sign{color:rgba(27,38,33,.7);letter-spacing:-.1504px}
+.figma-hero{position:relative;container-type:inline-size;aspect-ratio:1440/745;overflow:hidden;background:#c04444;color:#fbf6ea}
+.figma-hero-media{position:absolute;inset:0;pointer-events:none}
+.figma-hero-media img{position:absolute;max-width:none;object-fit:cover}
+.figma-hero-base{left:-2.013889%;top:-3.758389%;width:98.472222%;height:106.711409%}
+.figma-hero-photo{left:0;top:-13.557047%;width:116.666667%;height:126.308725%}
+.figma-hero-shade{position:absolute;inset:67.114094% 0 0;background:linear-gradient(to bottom,rgba(6,22,11,0),#000)}
+.figma-hero-content{position:absolute;left:8.333333%;right:8.333333%;bottom:8.187919%;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.figma-hero h1{flex:0 0 auto;margin:0;font:400 3.888889cqw/1.107143 var(--serif);letter-spacing:-.168cqw;white-space:nowrap}
+.figma-hero h1 span{color:#f0d9a6}
+.figma-hero-details{width:34.444444cqw;padding-top:.555556cqw;text-align:right}
+.figma-hero-details p{margin:0;font:400 1.25cqw/1.45 var(--sans);letter-spacing:-.030521cqw;color:rgba(255,255,255,.72)}
+.figma-hero-button{display:inline-flex;align-items:center;justify-content:center;margin-top:16.8px;height:38px;padding:0 16px;border-radius:999px;background:#fff;color:#000;font:500 14px var(--sans);letter-spacing:-.1504px;text-decoration:none;transition:background .2s}
+.figma-hero-button:hover{background:#f0d9a6}
+.figma-hero-button:focus-visible{outline:2px solid #f0d9a6;outline-offset:4px}
+@media(min-width:861px) and (max-width:1100px){.figma-hero-content{gap:20px}.figma-hero-button{height:34px;margin-top:12px;font-size:12px}}
+@media(max-width:860px){
+ .pill{top:16px;max-width:calc(100% - 32px);gap:16px;padding-left:14px}
+ .pill-logo img{width:125px}
+ .figma-hero{aspect-ratio:auto;min-height:720px;height:100svh;max-height:980px}
+ .figma-hero-media{left:50%;width:1450px;transform:translateX(-52%)}
+ .figma-hero-shade{inset:38% 0 0;background:linear-gradient(to bottom,transparent,rgba(0,0,0,.85) 80%,#000)}
+ .figma-hero-content{left:24px;right:24px;bottom:40px;display:block}
+ .figma-hero h1{font-size:clamp(34px,6.5vw,52px);line-height:1.1;letter-spacing:-.04em;white-space:normal}
+ .figma-hero h1 br{display:none}
+ .figma-hero-details{width:100%;max-width:496px;text-align:left;padding-top:20px}
+ .figma-hero-details p{font-size:16px;line-height:1.45;letter-spacing:-.02em}
+ .figma-hero-button{height:44px;margin-top:22px}
+}
