@@ -25,15 +25,11 @@
   // The month list: each item is ticked off as the section scrolls past (sequentially on phones)
   const month = $("[data-month]");
   if (month) {
-    const apps = $("[data-apps]", month), items = $$("[data-item]", month), left = $("[data-left]", month), done = $("[data-done]", month);
+    const items = $$("[data-item]", month), left = $("[data-left]", month), done = $("[data-done]", month);
     const set = (n) => {
       items.forEach((li, i) => li.classList.toggle("done", i < n));
       left.textContent = `${n} of ${items.length}`;
       done.classList.toggle("on", n === items.length);
-      if (apps) {
-        $$("span", apps).forEach((a, i) => a.classList.toggle("gone", i < n));
-        apps.classList.toggle("one", n === items.length);
-      }
     };
     if (reduce) set(items.length);
     else {
@@ -54,44 +50,20 @@
     }
   }
 
-  // How it works: the steps play through on their own and drive the app card; hover or tap to pick one
+  // How it works: hover or tap a step and the picture follows; it walks itself until someone touches it
   const steps = $("[data-steps]");
   if (steps) {
-    const li = $$(".banker-points li", steps), screens = $$(".app-s", steps);
-    const dwell = 4200;
-    let cur = 0, timer = 0, started = false;
-    steps.style.setProperty("--dwell", `${dwell}ms`);
-    const show = (n) => {
-      cur = (n + li.length) % li.length;
-      li.forEach((x, i) => x.classList.toggle("on", i === cur));
-      screens.forEach((x, i) => x.classList.toggle("on", i === cur));
-    };
-    const play = () => { clearTimeout(timer); if (!reduce) timer = setTimeout(() => { show(cur + 1); play(); }, dwell); };
+    const li = $$("li", steps), shots = $$(".bs");
+    let cur = 0, timer = null, touched = false;
+    const go = (i) => { cur = i; li.forEach((x, k) => x.classList.toggle("on", k === i)); shots.forEach((x, k) => x.classList.toggle("on", k === i)); };
     li.forEach((x, i) => {
-      const b = $("button", x);
-      b.addEventListener("click", () => { show(i); play(); });
-      b.addEventListener("mouseenter", () => { if (!mobile()) { show(i); clearTimeout(timer); steps.classList.add("paused"); } });
+      x.addEventListener("mouseenter", () => { touched = true; clearInterval(timer); go(i); });
+      $("button", x).addEventListener("click", () => { touched = true; clearInterval(timer); go(i); });
     });
-    $(".banker-points", steps).addEventListener("mouseleave", () => { steps.classList.remove("paused"); if (started) { show(cur); play(); } });
-    show(0);
     new IntersectionObserver(([e]) => {
-      if (e.isIntersecting && !started) { started = true; show(0); play(); }
-      else if (!e.isIntersecting && started) { started = false; clearTimeout(timer); }
+      clearInterval(timer);
+      if (e.isIntersecting && !touched && !reduce) timer = setInterval(() => go((cur + 1) % li.length), 2800);
     }, { threshold: 0.35 }).observe(steps);
-  }
-
-  // UI chips on the photos settle in as their card arrives
-  const chips = $$("[data-chip]");
-  if (chips.length) {
-    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.6 });
-    chips.forEach((x) => io.observe(x));
-  }
-
-  // The live rate ticks a little, so it reads as live
-  const rate = $("[data-rate]");
-  if (rate && !reduce) {
-    let r = 88.42;
-    setInterval(() => { r = Math.max(88.3, Math.min(88.55, r + (Math.random() - 0.5) * 0.04)); rate.textContent = `₹${r.toFixed(2)}`; }, 2600);
   }
 
   // The three proofs rise in under the billboard
@@ -107,10 +79,8 @@
     if (!gsap || !ScrollTrigger || reduce) return;
     gsap.registerPlugin(ScrollTrigger);
     // Hero: the photo drifts and settles as you leave it
-    gsap.fromTo("[data-hero-media]", { scale: 1.08 }, { scale: 1, duration: 1.8, ease: "power2.out" });
-    gsap.to("[data-hero-media]", { yPercent: 12, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
     // The billboard grows to fill the frame as it arrives
-    gsap.fromTo("[data-grow]", { scale: 0.88, borderRadius: 40 }, { scale: 1, borderRadius: 28, ease: "none", scrollTrigger: { trigger: "[data-grow]", start: "top 95%", end: "top 25%", scrub: true } });
+    gsap.fromTo("[data-grow] img", { scale: 1.12 }, { scale: 1, ease: "none", scrollTrigger: { trigger: "[data-grow]", start: "top 95%", end: "top 25%", scrub: true } });
     // Each stacked card dims a touch as the next one slides over it
     $$(".card").forEach((c, i, all) => {
       if (i === all.length - 1) return;
